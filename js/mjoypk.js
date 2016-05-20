@@ -38,9 +38,9 @@
         leftStepTime: defaults.gameTime, // 剩余游戏步长
         hHitTime: 400, // 锤子敲击动画时长
         turnNum: defaults.turnNum, // 初始自动翻面商标数
-        rlogos: ["./src/icons/r-1.png", "./src/icons/r-2.png", "./src/icons/r-3.png", "./src/icons/r-4.png",
-            "./src/icons/r-5.png", "./src/icons/r-6.png", "./src/icons/r-6.png", "./src/icons/r-7.png",],
-        initwlogos: ["./src/icons/w-1.png", "./src/icons/w-2.png", "./src/icons/w-3.png", "./src/icons/w-4.png", "./src/icons/w-5.png"],
+        rlogos: ["icons/r-1.png", "icons/r-2.png", "icons/r-3.png", "icons/r-4.png",
+            "icons/r-5.png", "icons/r-6.png", "icons/r-6.png", "icons/r-7.png",],
+        initwlogos: ["icons/w-1.png", "icons/w-2.png", "icons/w-3.png", "icons/w-4.png", "icons/w-5.png"],
         wlogos: [], // 已翻面随机的错误logo
         mhitting: false, // 玩家是否可连续敲击标识
         flipArray: [], // 已翻面正确logo集合
@@ -49,8 +49,8 @@
         brandtimeintervar: null
         // 游戏商标翻转计时器
     };
-    Jy.pimgs(["./src/image/num_3.png", "./src/image/num_2.png", "./src/image/num_1.png",
-        "./src/image/num_go.png", "./src/image/bg_count.png"]);
+    Jy.pimgs(["image/num_3.png", "image/num_2.png", "image/num_1.png",
+        "image/num_go.png", "image/bg_count.png"]);
     var mscoure = 0, oscore = 0;
     var mhammer = Jo("mhammer"), // 我的锤子
         ohammer = Jo("ohammer"), // 机器人锤子
@@ -77,17 +77,17 @@
         gameStatus = gameStatusEnum.ready;
         var countDown = Jo("count-dwon"), countNum = Jo("count-num"), countLight = Jo("count-light");
         countDown.show();
-        countNum.src = "./src/image/num_3.png";
+        countNum.src = "image/num_3.png";
         Jo(countLight.acls("countdown").show().parentNode).acls("show");
         var time = 0, counttimer = setInterval(function () {
             if (time == 16) {
-                countNum.src = "./src/image/num_2.png";
+                countNum.src = "image/num_2.png";
             } else if (time == 32) {
-                countNum.src = "./src/image/num_1.png";
+                countNum.src = "image/num_1.png";
             } else if (time == 48) {
                 Jo(countLight.parentNode).mcls("show");
                 countLight.mcls("countdown").hide();
-                countNum.src = "./src/image/num_go.png";
+                countNum.src = "image/num_go.png";
             } else if (time == 64) {
                 clearInterval(counttimer);
                 countDown.hide();

@@ -16,6 +16,11 @@ oMinHitTime: 1000 // 机器人 最小反应时间
 ###snapshot###
 ![image](snapshot/demo.png)
 
+###demo###
+See [css3 version](http://imwr.github.io/HitIcon/mindex.html)
+Or
+See [pc version](http://imwr.github.io/HitIcon)
+
 <!--
 ###demo###
 See [css3 version](http://tt-cc.cn/front-end/jquery-game/hiticon-css)

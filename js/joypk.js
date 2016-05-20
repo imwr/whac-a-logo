@@ -13,22 +13,22 @@ var mainLeft;
     mainLeft = Jo("main-container").offsetLeft;
     var html = "";
     if (Jy.fkIE) {
-        html = '<embed id="vcountdown" width="0" height="0" type="audio/x-wav" autoplay="false" src="./src/music/countdown.wav"></embed>'
-            + '<embed id="vhit" width="0" height="0" type="audio/x-wav" autoplay="false" src="./src/music/hit.wav"></embed>'
-            + '<embed id="vhright" width="0" height="0" type="audio/x-wav" autoplay="false" src="./src/music/hright.wav"></embed>'
-            + '<embed id="vhwrong" width="0" height="0" type="audio/x-wav" autoplay="false" src="./src/music/hwrong.wav"></embed>'
-            + '<embed id="vgameover" width="0" height="0" type="audio/x-wav" autoplay="false" src="./src/music/gameover.wav"></embed>';
+        html = '<embed id="vcountdown" width="0" height="0" type="audio/x-wav" autoplay="false" src="music/countdown.wav"></embed>'
+            + '<embed id="vhit" width="0" height="0" type="audio/x-wav" autoplay="false" src="music/hit.wav"></embed>'
+            + '<embed id="vhright" width="0" height="0" type="audio/x-wav" autoplay="false" src="music/hright.wav"></embed>'
+            + '<embed id="vhwrong" width="0" height="0" type="audio/x-wav" autoplay="false" src="music/hwrong.wav"></embed>'
+            + '<embed id="vgameover" width="0" height="0" type="audio/x-wav" autoplay="false" src="music/gameover.wav"></embed>';
     } else {
         var fliplink = document.createElement("link");
-        fliplink.setAttribute("href", "./src/css/flip.css");
+        fliplink.setAttribute("href", "css/flip.css");
         fliplink.setAttribute("type", "text/css");
         fliplink.setAttribute("rel", "stylesheet");
         document.getElementsByTagName("head")[0].appendChild(fliplink);
-        html = '<audio id="vcountdown" width="0" height="0" type="audio/x-wav" src="./src/music/countdown.wav"></audio>'
-            + '<audio id="vhit" width="0" height="0" type="audio/x-wav" src="./src/music/hit.wav"></audio>'
-            + '<audio id="vhright" width="0" height="0" type="audio/x-wav" src="./src/music/hright.wav"></audio>'
-            + '<audio id="vhwrong" width="0" height="0" type="audio/x-wav" src="./src/music/hwrong.wav"></audio>'
-            + '<audio id="vgameover" width="0" height="0" type="audio/x-wav" src="./src/music/gameover.wav"></audio>';
+        html = '<audio id="vcountdown" width="0" height="0" type="audio/x-wav" src="music/countdown.wav"></audio>'
+            + '<audio id="vhit" width="0" height="0" type="audio/x-wav" src="music/hit.wav"></audio>'
+            + '<audio id="vhright" width="0" height="0" type="audio/x-wav" src="music/hright.wav"></audio>'
+            + '<audio id="vhwrong" width="0" height="0" type="audio/x-wav" src="music/hwrong.wav"></audio>'
+            + '<audio id="vgameover" width="0" height="0" type="audio/x-wav" src="music/gameover.wav"></audio>';
     }
     Jo("player").innerHTML = html;
     var gameStatusEnum = {
@@ -60,9 +60,9 @@ var mainLeft;
         leftStepTime: defaults.gameTime, // 剩余游戏步长
         hHitTime: 400, // 锤子敲击动画时长
         turnNum: defaults.turnNum, // 初始自动翻面商标数
-        rlogos: ["./src/icons/r-1.png", "./src/icons/r-2.png", "./src/icons/r-3.png", "./src/icons/r-4.png",
-            "./src/icons/r-5.png", "./src/icons/r-6.png", "./src/icons/r-6.png", "./src/icons/r-7.png",],
-        initwlogos: ["./src/icons/w-1.png", "./src/icons/w-2.png", "./src/icons/w-3.png", "./src/icons/w-4.png", "./src/icons/w-5.png"],
+        rlogos: ["icons/r-1.png", "icons/r-2.png", "icons/r-3.png", "icons/r-4.png",
+            "icons/r-5.png", "icons/r-6.png", "icons/r-6.png", "icons/r-7.png",],
+        initwlogos: ["icons/w-1.png", "icons/w-2.png", "icons/w-3.png", "icons/w-4.png", "icons/w-5.png"],
         wlogos: [], // 已翻面随机的错误logo
         mhitting: false, // 玩家是否可连续敲击标识
         flipArray: [], // 已翻面正确logo集合
@@ -277,7 +277,7 @@ var mainLeft;
                 margin = 55;
                 for (var g = 0; g < settings.flipArray.length; g++) {
                     var sub = Jy.jCls("iebar", settings.flipArray[g])[0];
-                    sub.src = recovery ? "./src/image/back.png" : sub.getAttribute("data");
+                    sub.src = recovery ? "image/back.png" : sub.getAttribute("data");
                     if (recovery) {
                         settings.flipArray[g].mcls("lwrong");
                         sub.mcls("ieflipped");
@@ -325,7 +325,7 @@ var mainLeft;
             gameStatus = gameStatusEnum.hitting;
             effect = rightEffect;
             if (Jy.fkIE) {
-                effect.setAttribute("src", "./src/image/hieright.png");
+                effect.setAttribute("src", "image/hieright.png");
             } else {
                 effect.style.left = img.offsetLeft - 50 + "px";
                 effect.style.top = img.offsetTop - 50 + "px";
@@ -349,7 +349,7 @@ var mainLeft;
                 effect = img;
             } else {
                 effect = rightEffect;
-                effect.setAttribute("src", "./src/image/hiewrong.png");
+                effect.setAttribute("src", "image/hiewrong.png");
             }
             if (isMy) {
                 settings.mhitting = true;
@@ -455,7 +455,7 @@ var mainLeft;
         if (Jy.fkIE) {
             var recoverybrands = Jy.jCls("ieflipped", Jo("brand-container"));
             for (var i = 0; i < recoverybrands.length; i++) {
-                Jo(recoverybrands[i]).mcls("ieflipped").src = "./src/image/back.png";
+                Jo(recoverybrands[i]).mcls("ieflipped").src = "image/back.png";
                 ;
                 Jo(recoverybrands[i].parentNode).mcls("lwrong");
                 recoverybrands[i].style.width = "100px";
