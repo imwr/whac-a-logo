@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <title>Hiticon —— 打地鼠游戏</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+    <meta name="keywords" content="tt-cc"/>
+    <meta name="description" content="tt-cc"/>
+    <meta http-equiv="Cache-Control" content="no-transform "/>
+    <link rel="shortcut icon" href="http://imwr.github.io/resources/favicon.ico">
+    <link rel="bookmark" href="http://imwr.github.io/resources/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="./src/css/joypk-v.css">
+</head>
+<body>
+<div class="game-container" id="game-container">
+    <div class="viewport-bg"></div>
+    <div class="mask" style="display:none;" id="game-result">
+        <button class="mode-pic" id="restart-game">Start Now</button>
+    </div>
+    <div id="mode" class="mask" style="display:block">
+        <button class="mode-pic" id="start-game1">Start Now</button>
+    </div>
+    <div class="viewport">
+        <div class="viewport-container">
+            <div class="top-container" id="top-container">
+                <img src="./src/image/ico_clock.png" class="ico-clock" alt=""/>
+
+                <div class="time" id="progress-time">0.0s</div>
+                <div class="progress">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+            </div>
+            <div class="rw-box">
+                <div class="aside-container p-left">
+                    <div class="wd">
+                        <p id="m_nickname">You</p>
+                        <p class="num" >
+                            <span id="mev">0</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="aside-container p-right">
+                    <div class="wd">
+                        <p id="e_nickname">Machine</p>
+                        <p class="num" >
+                            <span id="otv">0</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <ul class="img-container" id="brand-container">
+                <li class="bra flipped">
+                    <div class="figure back">
+                        <img class="" src="./src/image/back.png"/>
+                    </div>
+                    <div class="figure front">
+                        <img class="brand" src=""/>
+                    </div>
+                </li>
+                <li class="bra flipped">
+                    <div class="figure back">
+                        <img class="" src="./src/image/back.png"/>
+                    </div>
+                    <div class="figure front">
+                        <img class="brand" src=""/>
+                    </div>
+                </li>
+                <li class="bra flipped">
+                    <div class="figure back">
+                        <img class="" src="./src/image/back.png"/>
+                    </div>
+                    <div class="figure front">
+                        <img class="brand" src=""/>
+                    </div>
+                </li>
+                <li class="bra flipped">
+                    <div class="figure back">
+                        <img class="" src="./src/image/back.png"/>
+                    </div>
+                    <div class="figure front">
+                        <img class="brand" src=""/>
+                    </div>
+                </li>
+                <li class="bra flipped">
+                    <div class="figure back">
+                        <img id="start-game" src="./src/image/back.png" id="start-game"/>
+                    </div>
+                    <div class="figure front">
+                        <img class="brand" src=""/>
+                    </div>
+                </li>
+                <li class="bra flipped">
+                    <div class="figure back">
+                        <img class="" src="./src/image/back.png"/>
+                    </div>
+                    <div class="figure front">
+                        <img class="brand" src=""/>
+                    </div>
+                </li>
+                <li class="bra flipped">
+                    <div class="figure back">
+                        <img class="" src="./src/image/back.png"/>
+                    </div>
+                    <div class="figure front">
+                        <img class="brand" src=""/>
+                    </div>
+                </li>
+                <li class="bra flipped">
+                    <div class="figure back">
+                        <img class="" src="./src/image/back.png"/>
+                    </div>
+                    <div class="figure front">
+                        <img class="brand" src=""/>
+                    </div>
+                </li>
+                <li class="bra flipped">
+                    <div class="figure back">
+                        <img class="" src="./src/image/back.png"/>
+                    </div>
+                    <div class="figure front">
+                        <img class="brand" src=""/>
+                    </div>
+                </li>
+                <img class="hit-effect" id="hright" src="./src/image/hright.png"/>
+                <img class="hammer" id="mhammer" src="./src/image/mhammer.png"/>
+                <img class="hammer" id="ohammer" src="./src/image/ohammer.png"/>
+
+                <div class="clear"></div>
+            </ul>
+            <div class="pop" id="count-dwon">
+                <div class="count-num-box show" id="count-box">
+                    <div class="num">
+                        <img id="count-num" src="./src/image/num_3.png" alt=""/>
+                    </div>
+                    <div id="count-light" class="count-num-light"></div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+</div>
+
+<script type="text/javascript" src="./src/js/fast.js"></script>
+<script type="text/javascript" src="./src/js/mcommon.js"></script>
+<script type="text/javascript" src="./src/js/mjoypk.js"></script>
+<section class="main-inner">
+    <br/>
+    <!-- JiaThis Button BEGIN -->
+    <div class="jiathis_style">
+        <span class="jiathis_txt">分享到：</span>
+        <a class="jiathis_button_weixin">微信</a>
+        <a class="jiathis_button_tsina">新浪微博</a>
+        <a class="jiathis_button_qzone">QQ空间</a>
+        <a class="jiathis_button_cqq">QQ好友</a>
+        <a class="jiathis_button_fav">收藏夹</a>
+        <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis"
+           target="_blank">更多</a>
+    </div>
+    <script type="text/javascript">
+        var jiathis_config = {
+            summary: "",
+            shortUrl: false,
+            hideMore: false
+        }
+    </script>
+    <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+    <!-- JiaThis Button END -->
+    <br/>
+    <br/>
+    <div id="disqus_thread"></div>
+</section>
+<script>
+    var disqus_config = function () {
+        this.page.url = location.href; // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = location.pathname; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function () { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = '//tt-cc.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+</body>
+</html>
