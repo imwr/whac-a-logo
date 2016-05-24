@@ -1,5 +1,5 @@
-# HitIcon
-Hit wrong Icon game —— 打假图标游戏，IE浏览器JS动画，高级浏览器CSS动画，类似打地鼠，与电脑挑战，打击假图标多者获胜。
+# whac-a-logo
+like Whac-A-Mole game —— 打假图标游戏，IE浏览器JS动画，高级浏览器CSS动画，类似打地鼠，与电脑挑战，打击假图标多者获胜。
 
 ###options###
 ```html
@@ -17,9 +17,9 @@ oMinHitTime: 1000 // 机器人 最小反应时间
 ![image](snapshot/demo.png)
 
 ###demo###
-See [css3 version](http://imwr.github.io/HitIcon/mindex.html)
+See [css3 version](http://imwr.github.io/whac-a-logo/mindex.html)
 Or
-See [pc version](http://imwr.github.io/HitIcon)
+See [pc version](http://imwr.github.io/whac-a-logo)
 
 <!--
 ###demo###
