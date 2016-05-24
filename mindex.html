@@ -40,7 +40,8 @@
                 <div class="aside-container p-left">
                     <div class="wd">
                         <p id="m_nickname">You</p>
-                        <p class="num" >
+
+                        <p class="num">
                             <span id="mev">0</span>
                         </p>
                     </div>
@@ -48,7 +49,8 @@
                 <div class="aside-container p-right">
                     <div class="wd">
                         <p id="e_nickname">Machine</p>
-                        <p class="num" >
+
+                        <p class="num">
                             <span id="otv">0</span>
                         </p>
                     </div>
@@ -150,7 +152,7 @@
 <script type="text/javascript" src="js/fast.js"></script>
 <script type="text/javascript" src="js/mcommon.js"></script>
 <script type="text/javascript" src="js/mjoypk.js"></script>
-<section class="game-container" style="padding:10px">
+<section class="game-container" style="padding:10px; display: none" id="share-comment">
     <br/>
     <!-- JiaThis Button BEGIN -->
     <div class="jiathis_style">
@@ -163,30 +165,31 @@
         <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis"
            target="_blank">更多</a>
     </div>
-    <script type="text/javascript">
-        var jiathis_config = {
-            summary: "",
-            shortUrl: false,
-            hideMore: false
-        }
-    </script>
-    <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
     <!-- JiaThis Button END -->
     <br/>
     <br/>
+
     <div id="disqus_thread"></div>
 </section>
 <script>
-    var disqus_config = function () {
+    var jiathis_config = {
+        summary: "",
+        shortUrl: false,
+        hideMore: false
+    }, disqus_config = function () {
         this.page.url = location.href; // Replace PAGE_URL with your page's canonical URL variable
         this.page.identifier = location.pathname; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
-    (function () { // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-        s.src = '//tt-cc.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
+    setTimeout(function () {
+        var d = document, share = d.createElement('script'), dis = d.createElement('script');
+        // add jiathis
+        share.src = '//v3.jiathis.com/code/jia.js';
+        // add disqus
+        dis.src = '//tt-cc.disqus.com/embed.js';
+        dis.setAttribute('data-timestamp', new Date());
+        (d.head || d.body).appendChild(share).appendChild(dis);
+        Jo("share-comment").show();
+    }, 1000);
 </script>
 </body>
 </html>
