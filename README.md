@@ -1,5 +1,5 @@
-# whac-a-logo
-like Whac-A-Mole game —— 打假图标游戏，IE浏览器JS动画，高级浏览器CSS动画，类似打地鼠，与电脑挑战，打击假图标多者获胜。
+# Whac-A-Logo —— Like Whac-A-Mole Game
+打假图标游戏，IE浏览器JS动画，高级浏览器CSS动画，类似打地鼠，与电脑挑战，打击假图标多者获胜。
 
 ###options###
 ```html
