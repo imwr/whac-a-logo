@@ -1,7 +1,7 @@
 /* =========================================================== *
- * @site http:tt-cc.cn
- * @email mvpjly@163.com
- * Copyright 2014 imwr
+ * @site http://tt-cc.cn
+ * @email ttccmvp@gmail.com
+ * Copyright 2016 ttcc
  * Licensed under the Apache License, Version 2.0 (the "License")
  * =========================================================== */
 ;
