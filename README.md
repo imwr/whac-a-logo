@@ -23,7 +23,7 @@ See [pc version](http://imwr.github.io/whac-a-logo)
 
 <!--
 ###demo###
-See [css3 version](http://tt-cc.cn/front-end/jquery-game/hiticon-css)
+See [css3 version](http://tt-cc.cc/front-end/jquery-game/hiticon-css)
 Or
-See [pc version](http://tt-cc.cn/front-end/jquery-game/hiticon)
+See [pc version](http://tt-cc.cc/front-end/jquery-game/hiticon)
 -->
